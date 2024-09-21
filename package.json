@@ -1,0 +1,41 @@
+{
+  "license": "MIT",
+  "dependencies": {
+    "@koa/cors": "5.0.0",
+    "@koa/router": "13.1.0",
+    "axios": "1.7.7",
+    "dotenv": "^16.0.0",
+    "ethers": "6.13.2",
+    "ganache": "7.5.0",
+    "google-protobuf": "^3.20.1",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "4.4.1",
+    "log4js": "^6.4.4"
+  },
+  "devDependencies": {
+    "@typechain/ethers-v5": "11.1.2",
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "5.0.2",
+    "@types/koa__cors": "5.0.0",
+    "@types/koa__router": "12.0.4",
+    "@types/node": "22.5.5",
+    "@typescript-eslint/eslint-plugin": "8.6.0",
+    "@typescript-eslint/parser": "8.6.0",
+    "eslint": "9.11.0",
+    "prettier": "3.3.3",
+    "ts-node": "^10.7.0",
+    "typechain": "^8.0.0",
+    "typescript": "5.6.2"
+  },
+  "scripts": {
+    "compile": "typechain --target ethers-v5 --out-dir src/typechain 'abis/**/*.json'",
+    "prettier": "prettier --write \"**/*.{js,json,md,ts}\"",
+    "lint": "eslint --config ./.eslintrc.json --ignore-path ./.eslintignore --ext .js,.ts . --fix",
+    "fix": "yarn prettier && yarn lint",
+    "start": "ts-node src/app.ts",
+    "test_swap": "ts-node scripts/swap_client.ts",
+    "test_sendTx": "ts-node scripts/sendTx_client.ts",
+    "test_quote": "ts-node scripts/quote_client.ts",
+    "test_invest": "ts-node scripts/invest_client.ts"
+  }
+}

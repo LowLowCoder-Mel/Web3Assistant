@@ -1,0 +1,8 @@
+node_modules/*
+src/typechain/*
+.env
+cache/*
+yarn-error.log
+nohup.out
+.DS_Store
+results/
